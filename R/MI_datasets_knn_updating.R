@@ -143,7 +143,7 @@ forte.fibroblasts@meta.data$Experiment <- rep("FORTE", ncol(forte.fibroblasts))
 
 ### CTHRC1 MI-day 14 data
 count.data <- Read10X("CTHRC1/MI_day14_CR6/filtered_feature_bc_matrix")
-count.data <- count.data[var.genes, colnames(mid14.fibroblasts), ]
+count.data <- count.data[overlapping.genes, colnames(mid14.fibroblasts), ]
 dim(count.data)
 mid14.fibroblasts <- CreateSeuratObject(counts = count.data, project = "CTHRC1_MI-day14")
 mid14.fibroblasts$Condition <- mid14.fibroblasts.conditions
